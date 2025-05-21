@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Transcript - Swiss Whisper</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Edit the Transcription</h1>
+    <form action="/edit" method="post">
+        <textarea name="transcript" rows="20" cols="80">{{ transcript }}</textarea><br>
+        <!-- This button will update the transcript and redirect to download -->
+        <button type="submit">Save & Download SRT</button>
+    </form>
+    
+    <!-- New section: Button to upload the next video -->
+    <br>
+    <!-- This button is simply a link that routes back to the index page -->
+    <a href="{{ url_for('index') }}">
+        <button type="button">Upload Next Video</button>
+    </a>
+    
+</body>
+</html>
